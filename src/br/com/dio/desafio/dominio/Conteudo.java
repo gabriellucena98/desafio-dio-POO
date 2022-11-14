@@ -11,7 +11,7 @@ public abstract class Conteudo {
     private double acertos = 0;
     private double perguntasTotal = 0;
 
-    private LocalDateTime proximaTentativa;
+    private LocalDateTime ultimaTentativa;
 
     public Conteudo(String titulo) {
         this.titulo = titulo;
@@ -22,11 +22,11 @@ public abstract class Conteudo {
     public boolean avaliacao() {
         LocalDateTime tentativa = LocalDateTime.now();
 
-        if (proximaTentativa == null) {
-            this.proximaTentativa = tentativa;
+        if (ultimaTentativa == null) {
+            this.ultimaTentativa = tentativa;
         }
 
-        if (proximaTentativa.isAfter(tentativa.plusHours(2))) {
+        if (ultimaTentativa.isAfter(tentativa.plusHours(2))) {
             System.out.println("Você precisa esperar mais para tentar novamente!");
             return false;
         }
