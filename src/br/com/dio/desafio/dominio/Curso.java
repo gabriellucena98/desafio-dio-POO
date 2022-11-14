@@ -3,7 +3,8 @@ package br.com.dio.desafio.dominio;
 public class Curso extends Conteudo {
     private int cargaHoraria;
 
-    public Curso() {
+    public Curso(String titulo) {
+        super(titulo);
     }
 
     @Override
@@ -27,6 +28,4 @@ public class Curso extends Conteudo {
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
-
-
 }
